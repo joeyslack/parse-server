@@ -1,6 +1,6 @@
 // Tools for encrypting and decrypting passwords.
 // Basically promise-friendly wrappers for bcrypt.
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcrypt');
 
 // Returns a promise for a hashed password string.
 function hash(password) {
