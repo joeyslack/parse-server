@@ -378,7 +378,9 @@ global.jfail = function(err) {
 
 global.it_exclude_dbs = excluded => {
   if (excluded.includes(process.env.PARSE_SERVER_TEST_DB)) {
-    return xit;
+    return function(name, callback) {
+      return xit(`(in progress on ${excluded.join(',')}) ${name}`, callback);
+    }
   } else {
     return it;
   }
